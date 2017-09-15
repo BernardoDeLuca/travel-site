@@ -1,0 +1,26 @@
+@define-mixin atSmall {
+  @media (min-width: 530px) {   /* 530px is only an arbitrary number for our example*/
+    @mixin-content;
+  }
+}
+
+
+@define-mixin atMedium {
+  @media (min-width: 800px) {   /* 800px is only an arbitrary number for our example*/
+    @mixin-content;
+  }
+}
+
+@define-mixin atLarge {
+  @media (min-width: 1200px) {   /* 1200px is only an arbitrary number for our example*/
+    @mixin-content;
+  }
+}
+
+@define-mixin clearfix {
+  &::after {
+    content: "";    /*adds blank space after all content in the main Row div*/
+    clear: both;
+    display: table;
+  }
+}

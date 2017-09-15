@@ -1,0 +1,17 @@
+body {
+  font-family: 'Roboto', sans-serif;  /*fallback*/
+  color: #333;  /*dark gray*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $mainOrange;
+}

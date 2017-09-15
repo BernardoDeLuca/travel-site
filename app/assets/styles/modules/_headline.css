@@ -1,0 +1,52 @@
+.headline {
+  font-weight: 300;     /*Makes the font-weight lighter, matching our design file. */
+  font-size: 1.9rem;  /*small baseline font-size for tiny screens*/
+  color: $mainBlue;     /*Matching the headline text color of our design file*/
+
+  @mixin atSmall {
+    font-size: 2.875rem;  /*Increases the font-size to match our design file on small to larger screens. 46px equivalent to 2.875rem*/
+  }
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--orange {
+    color: $mainOrange;
+  }
+
+  &--small {
+    font-size: 1.2rem;  /*On smaller screens, the size of the orange text "Ever since..."*/
+
+    @mixin atSmall {
+          font-size: 1.875rem;  /*On small to larger screens, the size of the orange text "Ever since..."*/
+    }
+  }
+
+  &--narrow {
+    max-width: 500px;     /*lets the orange "Ever since..." text wrap to a second line.*/
+    margin-left: auto;    /*in conjuction with margin-right: auto; this centers the text*/
+    margin-right: auto;   /*in conjuction with margin-left: auto; this centers the text*/
+  }
+
+  &--light {
+    font-weight: 100;
+  }
+
+  strong {
+    font-weight: 400;
+  }
+
+  &--b-margin-small {
+    margin-bottom: .5em;  /*use em here, because it is relevant to the font-size of the styled element itself.  This means we can reuse this class on elements which have different font sizes, confident that it will scale beautifully!*/
+  }
+
+  &--b-margin-large {
+    margin-bottom: 1.6em;  /*use em here, because it is relevant to the font-size of the styled element itself.  This means we can reuse this class on elements which have different font sizes, confident that it will scale beautifully!*/
+  }
+
+  &--no-t-margin {  /* Removes the top margin of the "Here's how we got started" headline text, aligning the headline text flush with the "Jane Doe" image*/
+    margin-top: 0;
+  }
+
+}

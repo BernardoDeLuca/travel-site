@@ -1,0 +1,53 @@
+.large-hero {  /*styles for div containing seaside image and related text*/
+  border-bottom: 10px solid $mainBlue;
+  position: relative;
+
+      &__image {
+        display: block;  /*default display of images is inline, but we change it to block to avoid space/gap*/
+      }
+
+      &__text-content {  /*Styles that position text on top of seaside image*/
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);  /*lets us position an element vertically, relative to itself.  -50% pulls the content up by half of its total height.*/
+        left: 0;
+        width: 100%;
+        text-align: center;  /*width 100% and text-align center will center the text over the image horizontally */
+      }
+
+      &__title {  /*Your Clarity.   h1 element text*/
+        font-weight: 300;
+        color: $mainBlue;   /*replaces color: #2f5572 with a variable saved in _variables.css file*/
+        margin: 0;
+        font-size: 2.4rem;
+
+        @mixin atSmall  {    /* replaces media query */
+          font-size: 4.8rem;
+        }
+      }
+
+
+      &__subtitle {  /*One Trip Away.   h2 element text*/
+        font-weight: 300;
+        color: $mainBlue;   /*replaces color: #2f5572 with a variable saved in _variables.css file*/
+        margin: 0;
+        font-size: 1.5rem;
+        @mixin atSmall {    /* replaces media query */
+          font-size: 2.9rem;
+        }
+      }
+
+      &__description {
+        color: #FFF;  /* FFF or ffffff is white*/
+        font-size: 1.1rem;   /*baseline font-size for smaller screens like movile devices*/
+        font-weight: 100;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);  /*2px offset  0 blur  black that is only 10% visible*/
+        max-width: 30rem;  /* converted from 480px */
+        margin-left: auto;
+        margin-right: auto;
+
+        @mixin atSmall {    /* replaces media query */
+          font-size: 1.875rem; /*about equal to 30px for larger screens like desktops and large laptops*/
+        }
+      }
+}

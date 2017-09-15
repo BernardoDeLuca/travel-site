@@ -1,0 +1,12 @@
+.page-section {   /*adds top and bottom padding to page sections*/
+  padding: 1.2rem 0;   /* For smaller screens, 1.2rem padding on top and bottom, no padding on right and left*/
+
+  @mixin atMedium {
+      padding: 4.5rem 0;   /* For medium and larger screens, 4.5rem padding on top and bottom, no padding on right and left*/
+  }
+
+  &--blue {
+    background-color: $mainBlue;
+    color: #FFF;
+  }
+}

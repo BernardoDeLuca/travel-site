@@ -1,0 +1,25 @@
+.wrapper {
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;    /*Sets max width of 1200px for content, for easier viewing and reading on large screens.*/
+  margin-left: auto;    /*Together with  margin-right: auto;  this centers the horizontal content */
+  margin-right: auto;   /*Together with  margin-left: auto;  this centers the horizontal content */
+
+  &--medium {
+    max-width: 976px;  /*Sets a narrower max-width for the "holding hands" image*/
+  }
+
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;  /*Offsets the prior padding-left and padding-right styles, so any wrapper nested within another wrapper will no longer have any horizontal padding*/
+  }
+
+  &--b-margin {
+    margin-bottom: 1rem;    /*baseline margin-bottom for small screens*/
+
+    @mixin atSmall {
+    margin-bottom: 3.875rem;  /*margin between "holding hands" and "jane doe" images on small(larger than mobile phones) to larger screens */
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.btn {     /* The default button will have a blue background with white text*/
+  background-color: $mainBlue;
+  color: #FFF;
+  text-decoration: none; /*removes the underline */
+  padding: .75rem 1.2rem;  /*.75rem top and bottom padding  and 1.2rem is the left and right padding*/
+  display: inline-block; /*because we're giving it padding, its parent and surrounding elements will be aware of its vertical padding*/
+
+  &--orange {
+    background-color: $mainOrange;  /*the orange background color of certain buttons*/
+  }
+
+  &--large {
+    padding: 1.1rem 1.9rem; /*increasing the padding, compared to the .btn rule*/
+
+    @mixin atSmall {
+    font-size: 1.25rem; /*the font will be 25% larger than the page's default font*/
+    }
+  }
+}
