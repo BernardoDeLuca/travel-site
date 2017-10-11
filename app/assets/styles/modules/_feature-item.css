@@ -1,0 +1,31 @@
+.feature-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+
+  @mixin atSmall {
+     padding-left: 94px; /* Only applies to screens a certain size or larger (larger than mobile phones) */
+  }
+
+  &__icon {   /* Centers the icon on smallest screens (mobile phones)*/
+    display: block;
+    margin: 0 auto;
+
+  @mixin atSmall {   /* Icons positioned to the left of related Features text sections only on screens certain size or larger (larger than mobile phones) */
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__title {   /* Styles the title text of each Our Features section only for smallest screens /  mobible phones) */
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: .8rem;
+    text-align: center;
+
+    @mixin atSmall {  /* Styles the title text of each Our Features section for screens a certain size or larger (larger than mobible phones) */
+      text-align: left;
+      margin-top: 1em;
+      font-size: 1.875rem;
+    }
+  }
+}

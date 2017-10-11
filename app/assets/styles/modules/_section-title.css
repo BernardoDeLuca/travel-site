@@ -1,0 +1,27 @@
+.section-title {
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
+
+  @mixin atSmall {
+  font-size: 3.75rem;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  &__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .6rem;  /* Adds just a bit of bottom margin below the icon and text beneath it */
+
+    @mixin atSmall {
+    margin-right: .5rem;  /* The space between star icon and Our Features title text */
+    margin-left: 0; /* offsets the margin-left: auto rule above when dealing with other screen sizes */
+    margin-bottom: 0; /* offsets and undoes the margin-bottom: .6rem when dealing with other screen sizes */
+    display: inline-block;  /* on larger screens, to prevent text after the icon from dropping to a new line */
+    }
+  }
+}

@@ -675,9 +675,7 @@ a {
     margin-top: 0;
   }
 
-.row {
-  background-color: floralwhite;
-}
+/*background-color: floralwhite;  Looks nice on Jane Doe section, but inappropiately affects Our Features section. */
 
 .row::after {
     content: "";    /*adds blank space after all content in the main Row div*/
@@ -689,42 +687,134 @@ a {
    margin-right: -65px;
  }
 
+.row--gutters-large {
+   margin-right: -100px;
+ }
+
 .row--gutters > div {
    padding-right: 65px;
    -webkit-box-sizing: border-box;
            box-sizing: border-box;
  }
 
+.row--gutters-large > div {
+   padding-right: 100px;
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+ }
+
 @media (min-width: 800px) {
 
-.row {   /* 800px is only an arbitrary number for our example*/
+.row {   /* 800px is only an arbitrary number for our example*/   /* Creates approx. 1/3 width left column in the Jane Doe section */
 }
   .row__medium-4 {
     float: left;
     width: 33.33%;
   }
 
-  .row__medium-4--larger {
+  .row__medium-4--larger {   /* Creates approx. 1/3 width left column in the Jane Doe section */
     width: 37%;
   }
 
-  .row__medium-8 {
+  .row__medium-6 {    /* Creates a 2-column layout of Our Features section  */
+    float: left;
+    width: 50%;
+  }
+
+  .row__medium-8 {   /* Creates approx. 2/3 width right column in the Jane Doe text section */
     float: left;
     width: 66.66%;
     text-align: justify;
   }
 
-  .row__medium-8--smaller {
+  .row__medium-8--smaller {    /* Creates approx. 2/3 width right column in the Jane Doe text section */
     width: 63%;
   }
   }
 
-.generic-content-container p {
+.generic-content-container p {font-weight: 300;
     line-height: 1.65;
     font-size: 1.125rem;
-    margin: 1.8rem 0;
+    margin: 0 0 1.8rem 0;
   }
 
 .generic-content-container p a {  /* Descendant selector: Any links 'a' within a paragraph 'p' will be bold */
     font-weight: 700;
+  }
+
+.section-title {
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+@media (min-width: 530px) {
+
+.section-title {   /* 530px is only an arbitrary number for our example*/
+  font-size: 3.75rem
+}
+  }
+
+.section-title strong {
+    font-weight: 500;
+  }
+
+.section-title__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: .6rem;
+  }
+
+/* Adds just a bit of bottom margin below the icon and text beneath it */
+
+@media (min-width: 530px) {
+
+.section-title__icon {   /* 530px is only an arbitrary number for our example*/
+    margin-right: .5rem;  /* The space between star icon and Our Features title text */
+    margin-left: 0; /* offsets the margin-left: auto rule above when dealing with other screen sizes */
+    margin-bottom: 0; /* offsets and undoes the margin-bottom: .6rem when dealing with other screen sizes */
+    display: inline-block  /* on larger screens, to prevent text after the icon from dropping to a new line */
+  }
+  }
+
+.feature-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 530px) {
+
+.feature-item {   /* 530px is only an arbitrary number for our example*/
+     padding-left: 94px /* Only applies to screens a certain size or larger (larger than mobile phones) */
+}
+  }
+
+.feature-item__icon {   /* Centers the icon on smallest screens (mobile phones)*/
+    display: block;
+    margin: 0 auto;
+  }
+
+@media (min-width: 530px) {
+
+.feature-item__icon {   /* 530px is only an arbitrary number for our example*/   /* Icons positioned to the left of related Features text sections only on screens certain size or larger (larger than mobile phones) */
+      position: absolute;
+      left: 0
+  }
+  }
+
+.feature-item__title {   /* Styles the title text of each Our Features section only for smallest screens /  mobible phones) */
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: .8rem;
+    text-align: center;
+  }
+
+@media (min-width: 530px) {
+
+.feature-item__title {   /* 530px is only an arbitrary number for our example*/  /* Styles the title text of each Our Features section for screens a certain size or larger (larger than mobible phones) */
+      text-align: left;
+      margin-top: 1em;
+      font-size: 1.875rem
+  }
   }
