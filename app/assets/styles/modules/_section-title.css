@@ -11,6 +11,10 @@
     font-weight: 500;
   }
 
+  &--blue {
+    color: $mainBlue;
+  }
+
   &__icon {
     display: block;
     margin-left: auto;
@@ -18,6 +22,8 @@
     margin-bottom: .6rem;  /* Adds just a bit of bottom margin below the icon and text beneath it */
 
     @mixin atSmall {
+    position: relative;  /* Lets you position the icon relative to its normal position. */
+    top: 8px;  /* Positions the icon 8px down from the top.*/
     margin-right: .5rem;  /* The space between star icon and Our Features title text */
     margin-left: 0; /* offsets the margin-left: auto rule above when dealing with other screen sizes */
     margin-bottom: 0; /* offsets and undoes the margin-bottom: .6rem when dealing with other screen sizes */

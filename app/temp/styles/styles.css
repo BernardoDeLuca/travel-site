@@ -575,6 +575,32 @@ a {
     max-width: 976px;  /*Sets a narrower max-width for the "holding hands" image*/
   }
 
+.wrapper--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 800px) {
+
+.wrapper--no-padding-until-medium {   /* 800px is only an arbitrary number for our example*/
+      padding-left: 18px;
+      padding-right: 18px
+  }
+  }
+
+.wrapper--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 1010px) {
+
+.wrapper--no-padding-until-large {   /* 1010px is only an arbitrary number for our example*/
+      padding-left: 18px;
+      padding-right: 18px
+  }
+  }
+
 .wrapper .wrapper {
     padding-left: 0;
     padding-right: 0;  /*Offsets the prior padding-left and padding-right styles, so any wrapper nested within another wrapper will no longer have any horizontal padding*/
@@ -595,7 +621,7 @@ a {
 
 .page-section {   /*adds top and bottom padding to page sections*/
   padding: 1.2rem 0;
-}
+ }
 
 /* For smaller screens, 1.2rem padding on top and bottom, no padding on right and left*/
 
@@ -603,12 +629,50 @@ a {
 
 .page-section {   /* 800px is only an arbitrary number for our example*/
       padding: 4.5rem 0   /* For medium and larger screens, 4.5rem padding on top and bottom, no padding on right and left*/
-}
+ }
+  }
+
+.page-section--no-b-padding-until-medium {
+    padding-bottom: 0;
+  }
+
+/* no bottom padding on the 3rd testimonial on mobile screens */
+
+@media (min-width: 800px) {
+
+.page-section--no-b-padding-until-medium {   /* 800px is only an arbitrary number for our example*/
+      padding-bottom: 4.5rem  /* for screen sizes medium and larger, we set padding-bottom back to its origianl value */
+  }
+  }
+
+.page-section--no-b-padding-until-large {
+    padding-bottom: 0;
+  }
+
+/* no bottom padding on the 3rd testimonial on mobile screens */
+
+@media (min-width: 1010px) {
+
+.page-section--no-b-padding-until-large {   /* 1010px is only an arbitrary number for our example*/
+      padding-bottom: 4.5rem  /* for screen sizes medium and larger, we set padding-bottom back to its origianl value */
+  }
   }
 
 .page-section--blue {
     background-color: #2f5572;
     color: #FFF;
+  }
+
+.page-section--testimonials {
+      background-color: #e0e6ef;
+    }
+
+@media (min-width: 1010px) {
+
+.page-section--testimonials {   /* 1010px is only an arbitrary number for our example*/
+        background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover
+    }
   }
 
 .headline {
@@ -683,6 +747,10 @@ a {
     display: table;
   }
 
+.row--t-padding {
+   padding-top: 80px;
+ }
+
 .row--gutters {
    margin-right: -65px;
  }
@@ -691,22 +759,33 @@ a {
    margin-right: -100px;
  }
 
+.row--gutters-small {
+   margin-right: -45px;
+ }
+
 .row--gutters > div {
    padding-right: 65px;
    -webkit-box-sizing: border-box;
-           box-sizing: border-box;
+           box-sizing: border-box;  /* check this */
  }
 
 .row--gutters-large > div {
    padding-right: 100px;
    -webkit-box-sizing: border-box;
-           box-sizing: border-box;
+           box-sizing: border-box;  /* check this */
  }
+
+/* Begin @mixin atMedium Rules */
 
 @media (min-width: 800px) {
 
 .row {   /* 800px is only an arbitrary number for our example*/   /* Creates approx. 1/3 width left column in the Jane Doe section */
 }
+
+.row__b-margin-until-medium {
+  margin-bottom: 0;
+}
+
   .row__medium-4 {
     float: left;
     width: 33.33%;
@@ -731,6 +810,77 @@ a {
     width: 63%;
   }
   }
+
+/* Begin @mixin atLarge Rules */
+
+@media (min-width: 1010px) {
+
+.row {   /* 1010px is only an arbitrary number for our example*/
+}
+
+.row__b-margin-until-large {
+margin-bottom: 0;
+}
+
+.row__large-4 {
+float: left;
+width: 33.33%;
+}
+
+.row__large-4--larger {
+width: 37%;
+}
+
+.row__large-6 {
+float: left;
+width: 50%;
+}
+
+
+.row__large-8 {
+float: left;
+width: 66.66%;
+}
+
+
+.row__large-8--smaller {
+width: 63%;
+}
+  }
+
+/* Begin Equal Height Rules */
+
+@media (min-width: 800px) {
+
+.row--equal-height-at-medium {   /* 800px is only an arbitrary number for our example*/
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex
+}
+  }
+
+.row--equal-height-at-medium > div {
+float: none;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
+
+@media (min-width: 1010px) {
+
+.row--equal-height-at-large {   /* 1010px is only an arbitrary number for our example*/
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex
+}
+  }
+
+.row--equal-height-at-large > div {
+float: none;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+}
 
 .generic-content-container p {font-weight: 300;
     line-height: 1.65;
@@ -759,6 +909,10 @@ a {
     font-weight: 500;
   }
 
+.section-title--blue {
+    color: #2f5572;
+  }
+
 .section-title__icon {
     display: block;
     margin-left: auto;
@@ -771,6 +925,8 @@ a {
 @media (min-width: 530px) {
 
 .section-title__icon {   /* 530px is only an arbitrary number for our example*/
+    position: relative;  /* Lets you position the icon relative to its normal position. */
+    top: 8px;  /* Positions the icon 8px down from the top.*/
     margin-right: .5rem;  /* The space between star icon and Our Features title text */
     margin-left: 0; /* offsets the margin-left: auto rule above when dealing with other screen sizes */
     margin-bottom: 0; /* offsets and undoes the margin-bottom: .6rem when dealing with other screen sizes */
@@ -818,3 +974,52 @@ a {
       font-size: 1.875rem
   }
   }
+
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.8);  /*max values for red, green, and blue create white.  0.8 is slightly transparent.*/
+  padding: 0 18px 1px 18px;  /* 0 padding on top, 18px on right, 1px on bottom, 18px on left.   Note: the 1px bottom padding plus the additional spacing provided by the <p> equals the desired bottom padding. */
+  margin-bottom: 98px;
+
+}
+
+/* Keeps the testimonial columns from overlapping on mobile screens, since they are stacked on mobile screens */
+
+@media (min-width: 1010px) {
+
+.testimonial {   /* 1010px is only an arbitrary number for our example*/
+  margin-bottom: 0;  /* Zeros out the bottom margin on larger screens, where it is no needed because the testimonials sit side by side. */
+  padding: 0 1.8125rem 1px 1.8125rem  /* 0 padding on top, 1.8125rem on right, 1px on bottom, 1.8125rem on left.   Note: the 1px bottom padding plus the additional spacing provided by the <p> equals the desired bottom padding. */
+
+}
+  }
+
+.testimonial--last {
+  margin-bottom: 0;   /* Eliminates part of the blue gap below the 3rd/final testimonial on mobile screens */
+}
+
+.testimonial__photo {
+  border-radius: 80px;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto -80px auto;   /* zero margin on top, auto on right, -80px bottom to counteract the pulling up of position relative top setting, auto on left*/
+  position: relative;
+  top: -80px; /* We pull the image up (using - the negative sign) by half of its height so that it violates the edge. */
+  border: 6px solid rgba(255, 255, 255, 0.8);
+}
+
+.testimonial__title {
+  color: #2f5572;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.testimonial__subtitle {
+  color: #d59541;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin: 0.25rem 0 1rem 0;
+}

@@ -1,0 +1,42 @@
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.8);  /*max values for red, green, and blue create white.  0.8 is slightly transparent.*/
+  padding: 0 18px 1px 18px;  /* 0 padding on top, 18px on right, 1px on bottom, 18px on left.   Note: the 1px bottom padding plus the additional spacing provided by the <p> equals the desired bottom padding. */
+  margin-bottom: 98px;  /* Keeps the testimonial columns from overlapping on mobile screens, since they are stacked on mobile screens */
+
+@mixin atLarge {
+  margin-bottom: 0;  /* Zeros out the bottom margin on larger screens, where it is no needed because the testimonials sit side by side. */
+  padding: 0 1.8125rem 1px 1.8125rem;  /* 0 padding on top, 1.8125rem on right, 1px on bottom, 1.8125rem on left.   Note: the 1px bottom padding plus the additional spacing provided by the <p> equals the desired bottom padding. */
+}
+
+&--last {
+  margin-bottom: 0;   /* Eliminates part of the blue gap below the 3rd/final testimonial on mobile screens */
+}
+
+&__photo {
+  border-radius: 80px;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto -80px auto;   /* zero margin on top, auto on right, -80px bottom to counteract the pulling up of position relative top setting, auto on left*/
+  position: relative;
+  top: -80px; /* We pull the image up (using - the negative sign) by half of its height so that it violates the edge. */
+  border: 6px solid rgba(255, 255, 255, 0.8);
+}
+
+&__title {
+  color: $mainBlue;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+&__subtitle {
+  color: $mainOrange;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  margin: 0.25rem 0 1rem 0;
+}
+
+}

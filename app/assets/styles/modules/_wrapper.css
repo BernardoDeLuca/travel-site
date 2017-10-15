@@ -10,10 +10,33 @@
     max-width: 976px;  /*Sets a narrower max-width for the "holding hands" image*/
   }
 
+
+  &--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
+
+  &--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
   .wrapper {
     padding-left: 0;
     padding-right: 0;  /*Offsets the prior padding-left and padding-right styles, so any wrapper nested within another wrapper will no longer have any horizontal padding*/
   }
+
 
   &--b-margin {
     margin-bottom: 1rem;    /*baseline margin-bottom for small screens*/
